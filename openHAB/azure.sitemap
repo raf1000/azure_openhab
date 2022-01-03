@@ -1,0 +1,14 @@
+Text label="Azure 551R" icon="cambridgeaudio" {
+            
+            Default     item=CA_Power //   CA_PowerState
+            Default     item=CA_MuteState                
+            Setpoint    item=CA_Volume     minValue=-90 maxValue=-25 step=1
+            Selection   item=CA_InputSelect mappings=[Tuner="Tuner", BDDVD="BD/DVD", CDVideo1="CD/Video1", Video2="Video2", AuxTV="Aux/TV", TapeMDCR="Tape/MD/CDR", Vid3MP3="Vid3/MP3", DirectIn="Direct In", TVARC="TV ARC"]            
+            Selection   item=CA_SourceType mappings=[Analogue="Analogue", HDMI="HDMI", Digital="Digital"]
+            Switch      item=CA_TunerBand mappings=[FM="FM", AM="AM"]
+            Switch      item=CA_SurroundChange  mappings=[ON="Next"]
+            Default     item=CA_Current_DD_DTS 
+            Selection   item=CA_Drc  mappings=[Auto="Auto", On="On", Off="Off"]
+            Default     item=CA_Biamp 
+
+            }

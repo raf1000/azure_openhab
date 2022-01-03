@@ -1,0 +1,33 @@
+rule "CA power"
+when
+    Item CA_Power changed to ON
+then
+     if (timerCAON === null) {   
+        timerCAON = createTimer(now.plusSeconds(15), [ |     
+        CA_Power.sendCommand(ON)
+        CA_SurroundChange.postUpdate(ON)
+        timerCAON = null ])
+    } else timerCAON = null        
+end
+
+rule "CA Vol"
+when
+    Item CA_Volume received command
+then
+    var jsonString = "{\"volume\":\""
+    val mqttActions = getActions("mqtt","mqtt:broker:mosquitto")
+    
+    if ( receivedCommand > CA_Volume.state as Number ) jsonString = jsonString + "up\"}"
+    else jsonString = jsonString + "down\"}"
+
+    mqttActions.publishMQTT("Azure/command",jsonString)
+end
+
+
+
+rule "Update Surround Switch label"
+when
+	Item CA_SurroundModes received update
+then
+	CA_SurroundChange.label = String::format("%s", CA_SurroundModes.state.toString) //lastUpdate
+end

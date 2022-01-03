@@ -1,0 +1,14 @@
+//Cambridge Audio Azure 551
+
+Switch          CA_Power                         "Włącznik [%s]"                        <switch>
+Switch          CA_MuteState                     "Wyciszenie [%s]"                      <soundvolume_mute>
+Number          CA_Volume                        "Głośność [%d dB]"                     <soundvolume>     
+String          CA_InputSelect                   "Wejście [%s]"                         <cainput>
+String          CA_SourceType                    "Typ sygnału [%s]"                     <hdmi>    
+String          CA_TunerBand                     "Tuner []"                             <onair>
+String          CA_SurroundModes                 "Surround [%s]"                     
+String          CA_Current_DD_DTS                "DD/DTS [%s]"                          <dts>
+Switch          CA_SurroundChange                "[]"                                   <surround>
+String          CA_Drc                           "DRC"                                  <drc>
+Switch          CA_Biamp                         "Bi-amping "                           <switch>                                                          
+String          CA_RawCommand                    "Send raw command"

@@ -1,4 +1,4 @@
-# azure_openhab
+# CA_azure_openhab
 This repository allows to integrate Cambridge Audio Azure 551 with openHAB. 
 
 The Azure 551 can be controled by external systems via an RS232 port.

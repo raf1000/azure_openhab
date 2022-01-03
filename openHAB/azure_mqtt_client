@@ -1,0 +1,110 @@
+UID: mqtt:topic:cambridge_audio
+label: Azure CA MQTT Client
+thingTypeUID: mqtt:topic
+configuration: {}
+bridgeUID: mqtt:broker:mosquitto
+channels:
+  - id: mute_state
+    channelTypeUID: mqtt:switch
+    label: Amplifier mute state
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{ "mute" : "%s" }'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.isMute
+  - id: power_state
+    channelTypeUID: mqtt:switch
+    label: Amplifier power state
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      postCommand: false
+      formatBeforePublish: '{ "status" : "%s" }'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.status
+  - id: input_select
+    channelTypeUID: mqtt:string
+    label: Input select
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"input":"%s"}'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.selectedInput
+  - id: source_type
+    channelTypeUID: mqtt:string
+    label: Set audio source for input
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"sourceType":"%s"}'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.sourceType
+  - id: volume
+    channelTypeUID: mqtt:number
+    label: Volume Up and Down
+    description: ""
+    configuration:
+      min: -90
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.volume
+      max: -10
+  - id: tuner_band
+    channelTypeUID: mqtt:string
+    label: Tuner band
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"tunerBand":"%s"}'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.tunerBand
+  - id: surround_modes
+    channelTypeUID: mqtt:string
+    label: Surround Mode
+    description: ""
+    configuration:
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.surroundMode
+  - id: dd_dts_mode
+    channelTypeUID: mqtt:string
+    label: Get current DD/DTS Mode
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      transformationPattern: JSONPATH:$.currentMode
+      stateTopic: Azure/status
+  - id: surround_change
+    channelTypeUID: mqtt:switch
+    label: Surround change button
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"surroundMode":"%s"}'
+      off: Next
+      on: Next
+  - id: dynamic_range_set
+    channelTypeUID: mqtt:string
+    label: Dynamic Range Control
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"drcSet":"%s"}'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.drcSet
+  - id: raw_command
+    channelTypeUID: mqtt:string
+    label: Send raw command
+    description: ""
+    configuration:
+      formatBeforePublish: '{"rawCommand":"%s"}'
+      commandTopic: Azure/command
+  - id: biamp
+    channelTypeUID: mqtt:switch
+    label: Bi-amping
+    description: ""
+    configuration:
+      commandTopic: Azure/command
+      formatBeforePublish: '{"biAmp":"%s"}'
+      stateTopic: Azure/status
+      transformationPattern: JSONPATH:$.biAmp

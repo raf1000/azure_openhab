@@ -25,6 +25,7 @@ The converter communicates with openHAB via MQTT protocol. The physical connecti
 # openHAB set up:
 * Install and set up MQTT Broker (mosquitto)
 * Install MQTT binding in openHAB
+* Add JSONPatch Transformation in openHAB
 * Create items : [azure.items](https://github.com/raf1000/azure_openhab/blob/main/openHAB/azure.items) file
 * Create MQTT client with channels : [azure_mqtt_client](https://github.com/raf1000/azure_openhab/blob/main/openHAB/azure_mqtt_client) file
 * Update sitemap : [azure.sitemap](https://github.com/raf1000/azure_openhab/blob/main/openHAB/azure.sitemap) file 

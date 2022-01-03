@@ -4,9 +4,13 @@ This repository allows to integrate Cambridge Audio Azure 551 with openHAB.
 The Azure 551 can be controled by external systems via an RS232 port.
 The following "converter" shall be prepared:
 
-Wemos D1 mini
-Max2323
-Power supply
+* Wemos D1 mini
+* Max2323
+* Power supply
+
+It can looks like the following:
+
+
 
 The converter communicates with Azure 551 via RS232 protocol and port.
 

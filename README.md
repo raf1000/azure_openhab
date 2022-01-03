@@ -32,4 +32,6 @@ The converter communicates with openHAB via MQTT protocol. The physical connecti
 * Update sitemap : [azure.sitemap](https://github.com/raf1000/azure_openhab/blob/main/openHAB/azure.sitemap) file 
 * Add rules : [azure.rules](https://github.com/raf1000/azure_openhab/blob/main/openHAB/azure.rules) file
 # Some notes:
-??
+1. The integration is tested with Cambridge Audio Azure 551R V2 but shall work for other/similar models as well
+2. The integration covers most usefull (for me) functions only and can be extended based on the attached document of Azure 551 serial protocol. But not all features of Azure 551 avaiable in OSD are avaiable via serial protocol.
+3. Bi-amping feature of Azure551 is not accesible directly in the serial protocol. I have implemented a "macro" in Arduino part which uses OSD commands to change (toggle) bi-amping ON/OFF . Other functions not supported by the Azure serial protocol can be accessed in a similar way. Or you can use raw command in openHAB to define a similar logic via rules.

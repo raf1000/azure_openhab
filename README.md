@@ -2,7 +2,7 @@
 This repository allows to integrate Cambridge Audio Azure 551 with openHAB. 
 
 The Azure 551 can be controled by external systems via an RS232 port.
-The following "converter" shall be prepared:
+Build/buy a "converter" prepared of the following elements:
 
 * Wemos D1 mini
 * Max2323
@@ -18,9 +18,10 @@ The converter communicates with openHAB via MQTT protocol. The physical connecti
 
 # Converter set up (Arduino):
 * Install and run arduino IDE, connect to Wemos D1 mini via USB.
-* Upload brink_hr(https://github.com/raf1000/azure_openhab/blob/main/Arduino/CambridgeAudio) program: Brink_HR.ino to arduino IDE
-* Specify network and mqtt parameters in the definitions.h program. make sure that definitions.h file is visible by the main program.
-* Upload the compiled Brink_HR progrm to wemos D1 mini. Connect wemos D1 mini to the max2323 and RS232 port of Azure. 
+* Upload [CambridgeAudio.ino](https://github.com/raf1000/azure_openhab/blob/main/Arduino/CambridgeAudio.ino) program to arduino IDE
+* Save the new program and add directory "include" in it. Load there the [deifnitions.h](https://github.com/raf1000/azure_openhab/blob/main/Arduino/definitions.h) file
+* Specify network and mqtt parameters in the definitions.h file.
+* Upload the compiled CambridgeAudio.ino progrm to wemos D1 mini. Connect wemos D1 mini to the max2323 and RS232 port of Azure. 
 # openHAB set up:
 * Install and set up MQTT Broker (mosquitto)
 * Install MQTT binding in openHAB

@@ -2,12 +2,10 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
-#include "include/definitions.h"
+#include "include/definitions.h" 
 //#include <SoftwareSerial.h>
 //SoftwareSerial* logger = nullptr;
-//#include <ESP8266WebServer.h>  //biblioteka serwera
-//ESP8266WebServer server; //deklaracja obiektu serwera z klasy ESP pytanie czy nie powinno byc server(80)? 
-//IPAddress dns(0,0,0,0);
+
 
 const int BUFFER_SIZE = JSON_OBJECT_SIZE(22); //returns the number of bytes required to store a JSON object that contains n key-value pairs.
 
@@ -371,13 +369,8 @@ void setup()
 //  logger->begin(9600);
 //  logger->enableIntTx(false);
  
-  IPAddress ip (192,168,0,171); //109,206,206,119 (external adres)
-  IPAddress dns (194,153,119,3);
-  IPAddress gateway (109,206,206,1);
-  IPAddress subnet (255,255,255,0);
-  WiFi.config(ip, dns, gateway, subnet);
 
-//   WiFi.mode(WIFI_STA); 
+   WiFi.mode(WIFI_STA); 
    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
    while (WiFi.status() != WL_CONNECTED) 
    {

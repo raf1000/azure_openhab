@@ -10,6 +10,7 @@ Build/buy a "converter" prepared of the following elements:
 
 It can looks like the following:
 
+![Converter](https://github.com/raf1000/azure_openhab/blob/main/CA_converter.jpg)
 
 
 The converter communicates with Azure 551 via RS232 protocol and port.

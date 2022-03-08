@@ -2,7 +2,7 @@
 This repository allows to integrate Cambridge Audio Azure 551 with openHAB. 
 
 The Azure 551 can be controled by external systems via an RS232 port.
-Buy or build a "converter" RS232 - TCP/IP prepared of the following elements:
+Build/buy a "converter" prepared of the following elements:
 
 * Wemos D1 mini
 * Max2323
